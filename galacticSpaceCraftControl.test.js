@@ -151,3 +151,69 @@ describe("Spacecraft movements in S direction", () => {
         checkspaceCraftState(spacecraft, 0, 0, 0, "D");
     });
 });
+
+// Unit Tests to test movements in Upwards direction
+describe("Spacecraft movements in Upwards direction", () => {
+    test("moves spacecraft forward when direction is Up", () => {
+        const spacecraft = initializeAndExecute(0, 0, 0, "U", "f");
+        checkspaceCraftState(spacecraft, 0, 0, 1, "U");
+    });
+
+    test("moves spacecraft backward when direction is Up", () => {
+        const spacecraft = initializeAndExecute(0, 0, 0, "U", "b");
+        checkspaceCraftState(spacecraft, 0, 0, -1, "U");
+    });
+
+    test("turns spacecraft left from Up direction", () => {
+        const spacecraft = initializeAndExecute(0, 0, 0, "U", "l");
+        checkspaceCraftState(spacecraft, 0, 0, 0, "N");
+    });
+
+    test("turns spacecraft right from Up direction", () => {
+        const spacecraft = initializeAndExecute(0, 0, 0, "U", "r");
+        checkspaceCraftState(spacecraft, 0, 0, 0, "S");
+    });
+
+    test("turns spacecraft up when facing Up direction", () => {
+        const spacecraft = initializeAndExecute(0, 0, 0, "U", "u");
+        checkspaceCraftState(spacecraft, 0, 0, 0, "U");
+    });
+
+    test("turns spacecraft down when facing Up direction", () => {
+        const spacecraft = initializeAndExecute(0, 0, 0, "U", "d");
+        checkspaceCraftState(spacecraft, 0, 0, 0, "D");
+    });
+});
+
+// Unit Tests to test movements in Downwards direction
+describe("Spacecraft movements in Downwards direction", () => {
+    test("moves spacecraft forward when direction is Down", () => {
+        const spacecraft = initializeAndExecute(0, 0, 0, "D", "f");
+        checkspaceCraftState(spacecraft, 0, 0, -1, "D");
+    });
+
+    test("moves spacecraft backward when direction is Down", () => {
+        const spacecraft = initializeAndExecute(0, 0, 0, "D", "b");
+        checkspaceCraftState(spacecraft, 0, 0, 1, "D");
+    });
+
+    test("turns spacecraft left from Down direction", () => {
+        const spacecraft = initializeAndExecute(0, 0, 0, "D", "l");
+        checkspaceCraftState(spacecraft, 0, 0, 0, "S");
+    });
+
+    test("turns spacecraft right from Down direction", () => {
+        const spacecraft = initializeAndExecute(0, 0, 0, "D", "r");
+        checkspaceCraftState(spacecraft, 0, 0, 0, "N");
+    });
+
+    test("turns spacecraft up when facing Down direction", () => {
+        const spacecraft = initializeAndExecute(0, 0, 0, "D", "u");
+        checkspaceCraftState(spacecraft, 0, 0, 0, "U");
+    });
+
+    test("turns spacecraft down when facing Down direction", () => {
+        const spacecraft = initializeAndExecute(0, 0, 0, "D", "d");
+        checkspaceCraftState(spacecraft, 0, 0, 0, "D");
+    });
+});

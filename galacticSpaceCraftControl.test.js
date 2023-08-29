@@ -217,3 +217,12 @@ describe("Spacecraft movements in Downwards direction", () => {
         checkspaceCraftState(spacecraft, 0, 0, 0, "D");
     });
 });
+
+// Tests to handle the invalid commands
+describe("spacecraft with invalid commands", () => {
+    test("throws an error for invalid command", () => {
+        const spaceCraft = new GalacticSpaceCraftControl(0, 0, 0, "N");
+        const invalidCommand = "x";
+        expect(() => spaceCraft.executeCommands(invalidCommand)).toThrowError(`Invalid command: ${invalidCommand}`);
+    });
+});

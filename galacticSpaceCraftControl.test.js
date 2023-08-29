@@ -107,7 +107,7 @@ describe("Spacecraft movements in West direction", () => {
         const spacecraft = initializeAndExecute(0, 0, 0, "W", "r");
         checkspaceCraftState(spacecraft, 0, 0, 0, "N");
     });
-    
+
     test("turns spacecraft up from West direction", () => {
         const spacecraft = initializeAndExecute(0, 0, 0, "W", "u");
         checkspaceCraftState(spacecraft, 0, 0, 0, "U");
@@ -115,6 +115,39 @@ describe("Spacecraft movements in West direction", () => {
 
     test("turns spacecraft down from West direction", () => {
         const spacecraft = initializeAndExecute(0, 0, 0, "W", "d");
+        checkspaceCraftState(spacecraft, 0, 0, 0, "D");
+    });
+});
+
+// Unit Tests to test movements in South direction
+describe("Spacecraft movements in S direction", () => {
+    test("moving spacecraft forward when direction is South", () => {
+        const spacecraft = initializeAndExecute(0, 0, 0, "S", "f");
+        checkspaceCraftState(spacecraft, 0, -1, 0, "S");
+    });
+
+    test("moving spacecraft backward when direction is South", () => {
+        const spacecraft = initializeAndExecute(0, 0, 0, "S", "b");
+        checkspaceCraftState(spacecraft, 0, 1, 0, "S");
+    });
+
+    test("turns spacecraft left from South direction", () => {
+        const spacecraft = initializeAndExecute(0, 0, 0, "S", "l");
+        checkspaceCraftState(spacecraft, 0, 0, 0, "E");
+    });
+
+    test("turns spacecraft right from South direction", () => {
+        const spacecraft = initializeAndExecute(0, 0, 0, "S", "r");
+        checkspaceCraftState(spacecraft, 0, 0, 0, "W");
+    });
+
+    test("turns spacecraft up from South direction", () => {
+        const spacecraft = initializeAndExecute(0, 0, 0, "S", "u");
+        checkspaceCraftState(spacecraft, 0, 0, 0, "U");
+    });
+
+    test("turns spacecraft down from South direction", () => {
+        const spacecraft = initializeAndExecute(0, 0, 0, "S", "d");
         checkspaceCraftState(spacecraft, 0, 0, 0, "D");
     });
 });

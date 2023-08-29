@@ -60,12 +60,30 @@ class GalacticSpaceCraftControl {
     }
 
     turnLeft() {
-        this.directionIndex = (this.directionIndex + 3) % 4;
+        switch (DIRECTIONS[this.directionIndex]) {
+            case 'U':
+                this.directionIndex = 0;
+                return;
+            case 'D':
+                this.directionIndex = 2;
+                return;
+            default:
+                this.directionIndex = (this.directionIndex + 3) % 4;
+        }
     }
 
 
     turnRight() {
-        this.directionIndex = (this.directionIndex + 1) % 4;
+        switch (DIRECTIONS[this.directionIndex]) {
+            case 'U':
+                this.directionIndex = 2;
+                return;
+            case 'D':
+                this.directionIndex = 0;
+                return;
+            default:
+                this.directionIndex = (this.directionIndex + 1) % 4;
+        }
     }
 
     turnUp() {

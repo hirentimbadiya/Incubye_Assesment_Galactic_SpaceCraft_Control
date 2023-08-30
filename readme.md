@@ -57,7 +57,9 @@ Follow the instructions below to get a copy of the project up and running on you
 
 To ensure the reliability of the navigation system, unit tests are provided. To run these tests:
 
-`npm test`
+```bash
+npm test
+```
 
 ## Built With
 
